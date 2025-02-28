@@ -13,9 +13,10 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 
-//main class
+//main class - "implements" so that tha App class may inheret 
 public class App implements ActionListener{
 
+    //set to 0; for click counter memory
     int count = 0;
     private JFrame frame;
     private JLabel label;
@@ -27,10 +28,13 @@ public class App implements ActionListener{
         //JFrame initialize
         frame = new JFrame();
 
+        //button initialized and text added
         JButton button = new JButton("Click Me!");
+        //register each click as a "count"
         button.addActionListener(this);
 
-        label = new JLabel("The number of clicks: 0"); //default view of it
+        //label tag for the GUI - can be edited and changed
+        label = new JLabel("Number of clicks: 0"); //default view of it
         
         panel = new JPanel();
         panel.setBorder(BorderFactory.createEmptyBorder(40, 30, 10, 40));
@@ -59,6 +63,6 @@ public class App implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         //
         count++;
-        label.setText("The number of clicks: " + count); //label is used to fill that set area - use setText to display 
+        label.setText("Number of clicks: " + count); //label is used to fill that set area - use setText to display 
     }
 }
